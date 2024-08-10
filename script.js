@@ -1,13 +1,12 @@
-const scrollThreshold = 100; // Set the scroll threshold in pixels
+const scrollThreshold = 100;
 const header = document.querySelector("header");
 
 function updateHeaderBackground() {
   const scrollTop = window.scrollY;
-  let alpha = Math.min(scrollTop / scrollThreshold, 1); // Calculate alpha value
+  let alpha = Math.min(scrollTop / scrollThreshold, 1);
 
-  // Define color stages based on scroll
-  const startColor = "rgba(0, 0, 0, 0)"; // Transparent
-  const endColor = `rgba(0, 0, 0, ${Math.min(alpha, 1)})`; // Gradually increasing opacity
+  const startColor = "rgba(30, 87, 97)";
+  const endColor = `rgba(30, 87, 97, ${Math.min(alpha, 1)})`;
 
   header.style.backgroundColor = endColor;
 }

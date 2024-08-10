@@ -7,15 +7,15 @@ body {
 }
 
 header {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 20px;
   text-align: right;
-  background-color: transparent; 
-  transition: background-color 0.5s ease; 
-  z-index: 1000; 
+  background-color: transparent;
+  transition: background-color 0.5s ease;
+  z-index: 1000;
 }
 
 nav {
@@ -135,14 +135,14 @@ nav {
 h2 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #ff6f61;
+  color: #eeeeee;
   text-transform: uppercase;
   font-weight: 700;
 }
 
 h2 span {
   font-size: 2rem;
-  color: #ffffff;
+  color: #f54618;
 }
 
 .about-me p {
@@ -163,7 +163,7 @@ ul li {
 }
 
 strong {
-  color: #ff6f61;
+  color: #eeeee;
   font-weight: 600;
 }
 
@@ -245,4 +245,3 @@ footer {
   text-align: center;
   background-color: #181818;
 }
-
