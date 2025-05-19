@@ -1,3 +1,180 @@
+/* --- Responsive Styles --- */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  header {
+    padding: 14px 10px;
+  }
+  .nav-link {
+    margin: 0 18px;
+    font-size: 16px;
+  }
+  .hero-image {
+    width: 350px;
+    position: static;
+    margin: 0 auto 20px;
+    display: block;
+    top: unset;
+    left: unset;
+    transform: none;
+    z-index: 0;
+  }
+  .hero-title {
+    font-size: 32px;
+    margin: 60px 0 16px;
+  }
+  .hero-quote {
+    font-size: 16px;
+  }
+  .hero-links {
+    margin-bottom: 60px;
+  }
+  .information {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    max-width: 98vw;
+  }
+  .about-me,
+  .education {
+    margin: 0 0 1.5rem 0;
+  }
+  .skills-container {
+    gap: 14px;
+  }
+  .portofolio {
+    padding: 2rem 1rem;
+    max-width: 98vw;
+  }
+  .porto-card {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+  }
+  .porto-card img {
+    width: 90vw;
+    max-width: 320px;
+    height: auto;
+    margin-bottom: 12px;
+  }
+  .porto-container {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+/* Mobile (≤600px) */
+@media (max-width: 600px) {
+  header {
+    padding: 10px 5px;
+    text-align: left;
+  }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .nav-link {
+    margin: 8px 0;
+    font-size: 15px;
+    padding: 6px 0;
+    display: block;
+  }
+  .hero {
+    padding: 30px 5px 20px 5px;
+    margin-top: 0;
+  }
+  .hero-image {
+    width: 180px;
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 22px;
+    margin: 30px 0 10px;
+  }
+  .hero-quote {
+    font-size: 13px;
+    margin: 10px 0;
+  }
+  .hero-links {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .social-link {
+    font-size: 13px;
+    padding: 7px 12px;
+    margin: 6px 4px;
+    gap: 3px;
+  }
+  .scroll {
+    font-size: 13px;
+  }
+  .information {
+    padding: 1rem 0.5rem;
+    border-radius: 6px;
+    box-shadow: none;
+    max-width: 100vw;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  h2 span {
+    font-size: 1.2rem;
+  }
+  .about-me p,
+  ul li {
+    font-size: 0.98rem;
+  }
+  .skills-container {
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .skills-container svg {
+    width: 22px;
+    height: 22px;
+  }
+  .portofolio {
+    padding: 1rem 0.5rem;
+    border-radius: 6px;
+    box-shadow: none;
+    max-width: 100vw;
+  }
+  .porto-card {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 18px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+  .porto-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .porto-card img {
+    width: 95vw;
+    max-width: 220px;
+    height: auto;
+    margin-bottom: 8px;
+    border-radius: 10px;
+  }
+  .porto-container {
+    padding: 0;
+    width: 100%;
+  }
+  .porto-skills {
+    gap: 8px;
+  }
+  .porto-skills svg {
+    width: 20px;
+    height: 20px;
+  }
+  footer {
+    padding: 8px 2px;
+    font-size: 13px;
+  }
+}
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -244,4 +421,113 @@ footer {
   padding: 10px;
   text-align: center;
   background-color: #181818;
+}
+
+.detail-btn {
+  margin-top: 12px;
+  padding: 8px 18px;
+  background: #ff4500;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.detail-btn:hover {
+  background: #e03d00;
+}
+
+.porto-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+.porto-modal.active {
+  display: flex;
+}
+.porto-modal-content {
+  background: #222;
+  padding: 24px 24px 16px 24px;
+  border-radius: 12px;
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.porto-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+.porto-modal-images img {
+  max-width: 70vw;
+  max-height: 60vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px #0008;
+  display: none;
+}
+.porto-modal-images img.active {
+  display: block;
+}
+.porto-modal-nav {
+  margin-top: 10px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.porto-nav-btn {
+  background: #ff4500;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.porto-nav-btn:hover {
+  background: #e03d00;
+}
+
+/* Modal Portofolio Responsive for Mobile */
+@media (max-width: 600px) {
+  .porto-modal-content {
+    max-width: 98vw;
+    max-height: 98vh;
+    padding: 8px 4px 8px 4px;
+    border-radius: 8px;
+  }
+  .porto-modal-images img {
+    max-width: 95vw;
+    max-height: 70vh;
+    border-radius: 8px;
+  }
+  .porto-modal-close {
+    top: 4px;
+    right: 10px;
+    font-size: 2.2rem;
+  }
+  .porto-modal-nav {
+    gap: 10px;
+  }
+  .porto-nav-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+  }
 }
